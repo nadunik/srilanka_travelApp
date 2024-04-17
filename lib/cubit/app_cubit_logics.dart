@@ -5,6 +5,7 @@ import 'package:srilankatravel_app/cubit/app_cubits.dart';
 import 'package:srilankatravel_app/pages/detail_page.dart';
 import 'package:srilankatravel_app/pages/home_page.dart';
 import 'package:srilankatravel_app/pages/welcome_page.dart';
+import 'package:srilankatravel_app/pages/mountain_page.dart';
 
 class AppCubitLogics extends StatefulWidget {
   const AppCubitLogics({Key? key}): super(key:key);
@@ -21,6 +22,9 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
         builder: (context, state){
           if(state is DetailState){
             return DetailPage();
+          }
+          if(state is MountainRedirectState){
+            return MountainPage();
           }
           if(state is WelcomeState){
             return WelcomePage();

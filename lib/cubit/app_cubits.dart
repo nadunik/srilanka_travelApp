@@ -28,4 +28,8 @@ void detailPage(DataModel data){
 goHome(){
   emit(LoadedState(places));
 }
+
+void goToMountainPage(DataModel data){
+  emit(MountainRedirectState());
+}
 }

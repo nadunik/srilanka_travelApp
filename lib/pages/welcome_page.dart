@@ -58,14 +58,14 @@ class _WelcomePageState extends State<WelcomePage> {
                           const SizedBox(height: 40,),
                           GestureDetector(
                             onTap: (){
-                              BlocProvider.of<AppCubits>(context).getData();
+                              Navigator.pushNamed(context, '/home');
                             },
                             child: Container(
                               width: 200,
                               child: Button(
                                   isResponsive: true,
                                   width: 120,
-                                backgroundColor: Color.fromARGB(255, 133, 65, 191),
+                                backgroundColor: Color.fromARGB(255, 59, 168, 195),
                                 color: Colors.white,
                                 buttonText: "Let's go",),
                               ),

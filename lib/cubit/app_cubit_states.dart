@@ -1,5 +1,6 @@
 
 import 'package:equatable/equatable.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:srilankatravel_app/model/data_model.dart';
 
 abstract class CubitStates extends Equatable{}
@@ -36,4 +37,22 @@ class DetailState extends CubitStates{
   @override
   //todo
   List<Object> get props => [places]; 
+}
+
+/*class MountainState extends CubitStates{
+  //MountainState(this.places);
+  //final DataModel places;
+  @override
+  //todo
+  List<Object> get props => []; 
+}*/
+
+/*class MountainRedirectState extends CubitStates{
+  @override
+  List<Object> get props =>[];
+}*/
+
+class MountainRedirectState extends CubitStates {
+  @override
+  List<Object> get props => []; 
 }

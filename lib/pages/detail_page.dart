@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:srilankatravel_app/cubit/app_cubit_states.dart';
-import 'package:srilankatravel_app/cubit/app_cubits.dart';
 import 'package:srilankatravel_app/widgets/app_bold_text.dart';
 import 'package:srilankatravel_app/widgets/app_text.dart';
 import 'package:srilankatravel_app/widgets/button.dart';
@@ -12,30 +9,9 @@ class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
   
   final int gottenStars=4;
-  
-  /*final List mountains = [
-    "assets/images/piduruthalagala.jpeg",
-    "assets/images/adamspeak.jpeg",
-    "assets/images/kirigalpotta.jpeg",
-    "assets/images/knuckles.jpeg",
-    "assets/images/greatewestern.jpeg",
-  ];
-  final List names = [
-    "Piduruthalagala"
-    "Adam's Peak",
-    "Kirigalpoththa",
-    "Knuckles",
-    "Great Western",
-  ];
-  final List locations = [
-    "Nuwara Eliya, Sri Lanka",
 
-  ];*/
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubits, CubitStates>(
-      builder: (context, state) {
-        DetailState detail = state as DetailState;
         return Scaffold(
           body: SizedBox(
             width: double.infinity,
@@ -66,7 +42,7 @@ class DetailPage extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: () {
-                          BlocProvider.of<AppCubits>(context).goHome();
+                          Navigator.pushNamed(context, '/destination0');
                         },
                         icon: const Icon(Icons.backspace),
                         color: Colors.white,
@@ -122,7 +98,7 @@ class DetailPage extends StatelessWidget {
                         SizedBox(height: 25 ,),
                         AppBoldText(text: "Description", color: Colors.black,size: 20,),
                         SizedBox(height: 10,),
-                        AppText(text: "Pidurutalagala (Sinhala: පිදුරුතලාගල, pronounced [ˌpidurutaˈlaːɡələ], Straw Plateau Rock), or previously Mount Pedro in English, is the highest mountain in Sri Lanka, at 2,524 m (8,281 ft). It is situated North-North-East from the town of Nuwara Eliya and is easily visible from most areas of the Central Province")
+                        AppText(text: "Pidurutalagala (Sinhala: පිදුරුතලාගල, pronounced [ˌpidurutaˈlaːɡələ], Straw Plateau Rock), or previously Mount Pedro in English, is the highest mountain in Sri Lanka, at 2,524 m (8,281 ft).[1] It is situated North-North-East from the town of Nuwara Eliya and is easily visible from most areas of the Central Province. Its summit is home to the central communications array of the Government of Sri Lanka and armed forces and serves as an important point in the country's radar system.")
                         
         
                     ],),
@@ -155,7 +131,4 @@ class DetailPage extends StatelessWidget {
           ),
         );
       }
-    );
-      
-    }
-  }
+}
